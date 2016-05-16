@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Riggy Arcade.CSharp.Plugins", "The Riggy Arcade.CSharp.Plugins.csproj", "{D46093A6-1A94-BD50-029C-BF1B5C971513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Riggy Arcade.CSharp", "The Riggy Arcade.CSharp.csproj", "{6701F50C-94DA-0391-B68D-1A9CA076B0CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "The Riggy Arcade.CSharp.Editor", "The Riggy Arcade.CSharp.Editor.csproj", "{C4059E65-E322-1EC1-6629-68521560CF82}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D46093A6-1A94-BD50-029C-BF1B5C971513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46093A6-1A94-BD50-029C-BF1B5C971513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46093A6-1A94-BD50-029C-BF1B5C971513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46093A6-1A94-BD50-029C-BF1B5C971513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6701F50C-94DA-0391-B68D-1A9CA076B0CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6701F50C-94DA-0391-B68D-1A9CA076B0CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6701F50C-94DA-0391-B68D-1A9CA076B0CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6701F50C-94DA-0391-B68D-1A9CA076B0CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4059E65-E322-1EC1-6629-68521560CF82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4059E65-E322-1EC1-6629-68521560CF82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4059E65-E322-1EC1-6629-68521560CF82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4059E65-E322-1EC1-6629-68521560CF82}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
