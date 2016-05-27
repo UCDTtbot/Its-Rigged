@@ -1,21 +1,34 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+    //Camera Variables
     [SerializeField]
     private Camera MainCamera;
     [SerializeField]
     private Transform Init_Pos;
     [SerializeField]
-    private Transform[] Camera_Pos = new Transform[4];
-    [SerializeField]
     private float Camera_Move_Time = 2.0f;
+    [SerializeField]
+    private Transform[] Camera_Pos = new Transform[2];
+    [SerializeField]
+    private string[] Game_Name = new string[2];
+
+    //Menu Variables
     [SerializeField]
     private GameObject MainMenu;
     [SerializeField]
     private GameObject GameSelect;
 
+    //Game Scripts
+    [SerializeField]
+    private GameObject[] Game_Controllers = new GameObject[2];
+
+    //Spaghetti Code Fuck
+    [SerializeField]
+    private int PinballPos;
 
     private float waitTime = 1.0f;
     private int curPos = -1;
@@ -26,15 +39,22 @@ public class GameController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+
+    }
+
+    void Awake ()
+    {
+        curPos = 0;
+        nextPos = 0;
         MainMenu.SetActive(true);
         GameSelect.SetActive(false);
         MainCamera.transform.position = Init_Pos.transform.position;
-        curPos = 0;
-        nextPos = 0;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        for (int i = 0; i < Game_Controllers.Length; i++)
+            Game_Controllers[i].SetActive(false);
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
 
     }
@@ -45,6 +65,12 @@ public class GameController : MonoBehaviour {
         MainMenu.SetActive(false);
         StartCoroutine(MoveCamera(Init_Pos, Camera_Pos[curPos], Camera_Move_Time));
         GameSelect.SetActive(true);
+        GameSelect.GetComponentInChildren<Text>().text = Game_Name[curPos];
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 
     public void NextGame()
@@ -58,6 +84,7 @@ public class GameController : MonoBehaviour {
             Debug.Log(nextPos);
             StartCoroutine(MoveCamera(Camera_Pos[curPos], Camera_Pos[nextPos], Camera_Move_Time));
             curPos = nextPos;
+            GameSelect.GetComponentInChildren<Text>().text = Game_Name[curPos];
         }
     }
 
@@ -72,7 +99,14 @@ public class GameController : MonoBehaviour {
             Debug.Log(nextPos);
             StartCoroutine(MoveCamera(Camera_Pos[curPos], Camera_Pos[nextPos], Camera_Move_Time));
             curPos = nextPos;
+            GameSelect.GetComponentInChildren<Text>().text = Game_Name[curPos];
         }
+    }
+
+    public void StartArcadeGame()
+    {
+        Game_Controllers[curPos].SetActive(true);
+        GameSelect.SetActive(false);
     }
 
     public IEnumerator MoveCamera(Transform Cur_Pos, Transform Next_Pos, float time)
